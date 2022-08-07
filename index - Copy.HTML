@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>LOG_IN-2</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(to left,#9563b7,#8a2190);
+        }
+        .myfont{
+            font-family:sans-serif;
+        }
+        .newBODY0{
+            font-family: 'Satisfy',cursive;
+        }
+        .newBODY1{
+            font-family: 'Comfortaa',cursive;
+        }
+        .newBODY2{
+            font-family: 'Lobster',cursive;
+        }
+        .newBODY3{
+            font-family: 'Oxygen',cursive;
+        }
+        .newBODY4{
+            font-family: 'Abel',cursive;
+        }
+        body::before{
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(to left,#9563b7,#8a2190);
+            top: 50px;
+            left: 50%;
+            border-radius: 50%;
+            box-shadow: 0px 0px 35px #46454549;
+        }
+        body::after{
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(to left,#9563b7,#8a2190);
+            top: 300px;
+            left: 30%;
+            border-radius: 50%;
+            box-shadow: 0px 0px 35px #46454549;
+        }
+        .main{
+            position: relative;
+            width: 300px;
+            height: 350px;
+            background-color: #ffffff0e;
+            z-index: 5;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0px 0px 15px #46454549;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+        }
+        .main::before{
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(to left,#9563b7,#8a2190);
+            border-radius: 5px;
+            top: -20px;
+            left: -30px;
+            opacity: 0.65;
+            box-shadow: 0px 0px 35px #46454549;
+        }
+        .main::after{
+            content: '';
+            position: absolute;
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(to left,#9563b7,#8a2190);
+            border-radius: 5px;
+            bottom: -40px;
+            right: -30px;
+            opacity: 0.5;
+            box-shadow: 0px 0px 35px #46454549;
+        }
+        .main .heading{
+            width: 100%;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .main .heading h1{
+            text-transform: uppercase;
+            font-size: 1.5em;
+            font-weight: 900;
+            color: #c2e3f68a;
+            letter-spacing: 3px;
+        }
+        .main .box{
+            position: relative;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            gap: 10px;
+        }
+        .main .box .username,
+        .main .box .password{
+            position: relative;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            text-transform: capitalize;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #c2e3f68a;
+        }
+        .main .box .username i,
+        .main .box .password i{
+            position: absolute;
+            top: 30px;
+            left: 10px;
+        }
+        .main .box input{
+            outline: none;
+            border: none;
+            height: 35px;
+            border-radius: 50px;
+            box-shadow: inset -1px -1px 2px #ffffff36,inset 1px 1px 2px #0000005a;
+            padding: 0px 30px;
+            margin-top: 2px;
+            color: white;
+        }
+        .main .box input::placeholder{
+            color: #ffffff70;
+           
+        }
+        .main .box p{
+            color: #070f69;
+            font-size: 0.9em;
+        }
+        .main .box p a{
+            text-decoration: none;
+            color: #fffdfd75;
+        }
+        .main .box p a:hover{
+            text-decoration: underline;
+        }
+        .main .box button{
+            height: 30px;
+            border-radius: 50px;
+            outline: none;
+            border: none;
+            font-weight: 700;
+            font-size: 20px;
+            color: #c2e3f68a;
+            box-shadow: -1px -1px 2px #ffffff36, 1px 1px 2px #0000005a;
+            margin:5px 0px;
+        }
+        .main .box button:active{
+            box-shadow: inset -3px -3px 6px #ffffff36,inset 3px 3px 6px #0000005a;
+            font-size: 19px;
+        }
+        .main .fa-gear{
+            position: absolute;
+            right: 10px;
+            color: #394124;
+            opacity: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .main .setting1:hover{
+            opacity: 1;
+        }
+        .main .setting2{
+            opacity: 2;
+        }
+        .main .change-setting{
+            position: absolute;
+            width: 130px;
+            right: -0px;
+            top: -30px;
+            background-color: #ffffff14;
+            border-radius: 10px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            transform-origin: bottom;
+            transform: rotate(90deg);
+            transition: 0.5s;
+            box-shadow: 0px 0px 5px #3a3a3a77;
+            backdrop-filter: blur(100px);
+            z-index: -4;
+            backdrop-filter: blur(20px);
+        }
+        .main .change-setting .arrow1{
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            left: -20px;
+            top: 30px;
+            overflow: hidden;
+        }
+        .main .change-setting .arrow2{
+            position: absolute;
+            width: 75%;
+            height: 75%;
+            top: 1.5px;
+            right: -8px;
+            background-color: #ffffff14;
+            box-shadow: 0px 0px 5px #3a3a3a77;
+            transform: rotate(45deg);
+        }
+        .main .new-class_change-setting{
+            opacity: 0;
+        }
+        .main .new-change-setting{
+            opacity: 1;
+            right: -150px;
+            transform: rotate(0deg);
+        }
+        .main .change-setting h4{
+            text-transform: uppercase;
+            text-align: center;
+        }
+        .main .change-setting .theme{
+            position: relative;
+            width: 100%;
+            height: 25px;
+            background-color: #fff7f716;
+            border-radius: 5px;
+            padding: 10px;
+            overflow: hidden;
+            transition: 0.7s;
+        }
+        .main .change-setting .newTheme{
+            height: 135px;
+        }
+        .main .change-setting .theme span{
+            position: absolute;
+            right: 10px;
+            top: 2px;
+            font-weight: 900;
+            transition: 0.5s;
+        }
+        .main .change-setting .theme h5{
+            text-transform: capitalize;
+            margin: -5px 0px 10px 10px;
+        }
+        .main .change-setting .theme ul li{
+            text-decoration: none;
+            list-style: none;
+            margin-left: 10px;
+            padding: 1px;
+        }
+        .main .change-setting .theme ul li:hover{
+            background-color: #858484;
+            color: white;
+            text-indent: 3px;
+        } 
+        .newList{
+            background-color: black;
+            color: white;
+        }       
+        .newMain1::before{
+            background: linear-gradient(to left,#6397b7,#722190);
+        }
+        .main .change-setting .fonts{
+            position: relative;
+            height: 25px;
+            width: 100%;
+            background-color: #fff7f716;
+            border-radius: 5px;
+            padding: 10px;
+            overflow: hidden;
+            transition: 0.7s;
+        }
+        .main .change-setting .newFonts{
+            height: 150px;
+        }
+        .main .change-setting .fonts span{
+            position: absolute;
+            right: 10px;
+            top: 2px;
+            font-weight: 900;
+            transition: 0.5s;
+        }
+        .main .change-setting .fonts h5{
+            text-transform: capitalize;
+            margin: -5px 0px 10px 10px;
+        }
+        .main .change-setting .fonts ul li{
+            text-decoration: none;
+            list-style: none;
+            margin-left: 10px;
+            border-radius: 2px;
+
+        }
+        .main .change-setting .fonts ul li:hover{
+            background-color: #434242;
+            color: white;
+            text-indent: 3px;
+        } 
+        .main .change-setting .fonts .rotate2{
+            transform:rotate(45deg);
+        }
+        .main .change-setting .theme .rotate1{
+            transform:rotate(45deg);
+        }
+        .new1{
+            background: linear-gradient(to left,#9563b7,#8a2190);
+        }
+        .new2{
+            background: linear-gradient(to left,#9563b7,#8a2190);
+        }
+        .new3{
+            background: linear-gradient(to left,#9563b7,#8a2190);
+        }       
+        .newMain0::before{
+            background: linear-gradient(to left,#6397b7,#722190);
+        }
+        .newMain0::after{
+            background: linear-gradient(to left,#6397b7,#722190);
+        }
+        .newBody0{
+            background: linear-gradient(to left,#6397b7,#722190);
+        }
+        .newBody0::before{
+            background: linear-gradient(to left,#6397b7,#722190);
+        }
+        .newBody0::after{
+            background: linear-gradient(to left,#6397b7,#722190);
+        }
+        .newInput0{
+            background: linear-gradient(to left,#6397b7,#722190);
+        }
+        .newButton0{
+            background: linear-gradient(to left,#6397b7,#722190);
+        }
+       
+
+
+        .newMain1::before{
+            background: linear-gradient(to left,#74b763,#21904d);
+        }
+        .newMain1::after{
+            background: linear-gradient(to left,#74b763,#21904d);
+        }
+        .newBody1{
+            background: linear-gradient(to left,#74b763,#21904d);
+        }
+        .newBody1::before{
+            background: linear-gradient(to left,#74b763,#21904d);
+        }
+        .newBody1::after{
+            background: linear-gradient(to left,#74b763,#21904d);
+        }
+        .newInput1{
+            background: linear-gradient(to left,#74b763,#21904d);
+        }
+        .newButton1{
+            background: linear-gradient(to left,#74b763,#21904d);
+        }
+
+
+        .newMain2::before{
+            background: linear-gradient(to left,#573232,#f8b5b5);
+        }
+        .newMain2::after{
+            background: linear-gradient(to left,#573232,#f8b5b5);
+        }
+        .newBody2{
+            background: linear-gradient(to left,#573232,#f8b5b5);
+        }
+        .newBody2::before{
+            background: linear-gradient(to left,#573232,#f8b5b5);
+        }
+        .newBody2::after{
+            background: linear-gradient(to left,#573232,#f8b5b5);
+        }
+        .newInput2{
+            background: linear-gradient(to left,#573232,#f8b5b5);
+        }
+        .newButton2{
+            background: linear-gradient(to left,#573232,#f8b5b5);
+        }
+
+
+        .newMain3::before{
+            background: linear-gradient(to left,#8287f0,#413486);
+        }
+        .newMain3::after{
+            background: linear-gradient(to left,#8287f0,#413486);
+        }
+        .newBody3{
+            background: linear-gradient(to left,#8287f0,#413486);
+        }
+        .newBody3::before{
+            background: linear-gradient(to left,#8287f0,#413486);
+        }
+        .newBody3::after{
+            background: linear-gradient(to left,#8287f0,#413486);
+        }
+        .newInput3{
+            background: linear-gradient(to left,#8287f0,#413486);
+        }
+        .newButton3{
+            background: linear-gradient(to left,#8287f0,#413486);
+        }
+        
+    </style>
+</head>
+<body id="body">
+    <div class="main">
+        <i class="fa-solid fa-gear" onclick="icon()"></i>
+        <div class="change-setting">
+            <div class="arrow1">
+                <div class="arrow2"></div>
+            </div>
+            <h4>settings</h4>
+            <div class="theme">
+                <span onclick="plus1()" class="span">+</span>
+                <h5 class="name">theme</h5>
+                <ul>
+                    <li onclick="changeTheme(0)" class="list">#theme-1</li>
+                    <li onclick="changeTheme(1)" class="list">#theme-2</li>
+                    <li onclick="changeTheme(2)" class="list">#theme-3</li>
+                    <li onclick="changeTheme(3)" class="list">#theme-4</li>
+                </ul>
+            </div>
+            <div class="fonts">
+                <span onclick="plus2()" class="span">+</span>
+                <h5 class="name">fonts</h5>
+                <ul>
+                    <li onclick="changeFont(0)" class="font">#font-1</li>
+                    <li onclick="changeFont(1)" class="font">#font-2</li>
+                    <li onclick="changeFont(2)" class="font">#font-3</li>
+                    <li onclick="changeFont(3)" class="font">#font-4</li>
+                    <li onclick="changeFont(4)" class="font">#font-5</li>
+            </div>
+        </div>
+        <div class="heading">
+            <h1>log in</h1>
+        </div>
+        <div class="box">
+            <div class="username">
+                <label for="">username</label>
+                <i class="fa-solid fa-user"></i>
+                <input type="text" placeholder="username" required class="input">
+            </div>
+            <div class="password">
+                <label for="">password</label>
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" placeholder="password" required class="input">
+            </div>
+            <p>Forgot password? &nbsp;<a href="#">click here</a></p>
+            <button class="button">Log in</button>
+            <p>Not a member? &nbsp;<a href="#">sign up</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll(".input")[0].classList.add("new1");
+        document.querySelectorAll(".input")[1].classList.add("new2");
+        document.querySelector(".button").classList.add("new3");
+        document.querySelector(".change-setting").classList.add("new-class_change-setting");
+        var setting=document.querySelector(".fa-gear");
+        setting.classList.add("setting1");
+        setting.addEventListener("click",newSetting);
+    function newSetting(){
+         var b=document.querySelector(".change-setting");
+         b.classList.toggle("new-change-setting");
+         setting.classList.toggle("setting2");
+    }
+    function plus1(){
+        var theme1=document.querySelector(".theme");
+        theme1.classList.toggle("newTheme");
+        document.querySelectorAll(".span")[0].classList.toggle("rotate1");
+    }
+    function plus2(){
+        var fonts1=document.querySelector(".fonts");
+        fonts1.classList.toggle("newFonts");
+        document.querySelectorAll(".span")[1].classList.toggle("rotate2");
+    }
+    function changeTheme(i){
+        var newMain=document.querySelector(".main");
+        newMain.classList.toggle("newMain"+i);
+        var newBody=document.querySelector("#body");
+        newBody.classList.toggle("newBody"+i);
+        var input1=document.querySelectorAll(".input")[0];
+        input1.classList.toggle("newInput"+i);
+        var input2=document.querySelectorAll(".input")[1];
+        input2.classList.toggle("newInput"+i);
+        var newbutton=document.querySelector(".button");
+        newbutton.classList.toggle("newButton"+i);
+        document.querySelectorAll(".list")[i].classList.toggle("newList");
+        
+        for(var j=0;j<4;j++){
+            if(j==i){
+                continue;
+            }
+            else{
+            newMain.classList.remove("newMain"+j);
+            newBody.classList.remove("newBody"+j);
+            input1.classList.remove("newInput"+j);
+            input2.classList.remove("newInput"+j);
+            newbutton.classList.remove("newButton"+j);
+            document.querySelectorAll(".list")[j].classList.remove("newList");
+            }
+        }
+    }
+    function changeFont(n){
+        var newbody=document.querySelector("#body");
+        newbody.classList.add("myfont");
+        newbody.classList.toggle("newBODY"+n);
+        document.querySelectorAll(".font")[n].classList.toggle("newList");
+
+        for(var j=0;j<5;j++){
+            if(j==n){
+                continue;
+            }
+            else{
+            newbody.classList.remove("newBODY"+j);
+            document.querySelectorAll(".font")[j].classList.remove("newList");
+            }
+    }
+} 
+    </script>
+</body>
+</html>
